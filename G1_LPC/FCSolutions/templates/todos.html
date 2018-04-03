@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Listagem de livros
+{% endblock title %}
+{% block tituloPagina %}
+Todos os chamados
+{% endblock tituloPagina %}
+
+{% block content %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Telefone</th>
+            <th>Departamento</th>
+            <th>Data de Abertura</th>
+            <th>Solicitante</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for chamado in chamados %}
+        <tr>
+            <td>{{ chamado.titulo }}</td>
+            <td>{{ chamado.descricao }}</td>
+            <td>{{ chamado.categoria }}</td>
+            <td>{{ chamado.telefone }}</td>
+            <td>{{ chamado.departamento }}</td>
+            <td>{{ chamado.dataAbertura }}</td>
+            <td>{{ chamado.solicitante }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock content %}
